@@ -11,4 +11,11 @@ class Scrapeit
       false
     end
   end
+
+  def web_scraper(val)
+    url = 'https://www.bloggingcage.com/highest-paying-affiliate-programs/'
+    parsed = Nokogiri::HTML(URI.open(url))
+    article_title = parsed.css('h3').to_a
+    article_title[val-1].text
+  end
 end

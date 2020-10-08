@@ -18,7 +18,11 @@ def get_user_input
     input = gets.chomp.to_i
     break if scrape.check_input(input)
   end
+  aff = scrape.web_scraper(input)
+  puts aff
 end
+
+
 
 about
 get_user_input
