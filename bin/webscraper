@@ -5,9 +5,20 @@ require_relative '../lib/methods.rb'
 def about
   puts 'This app will provide details about the top 30 Affiliate programs.'
   puts '------------------------------'
-  puts 'Affiliate marketing is no doubt a great business model. When someone starts his/her affiliate marketing career, all they want to know first is affiliate marketing programs where they can pick the products and promote. Here, you are going to see some of the best affiliate programs which you can pick and start making more money because they pay higher commission than other market players.'
+  puts 'Affiliate marketing is a great business model. When someone starts his/her affiliate marketing career, all they want to know first is affiliate marketing programs where they can pick the products and promote. Here, you are going to see some of the best affiliate programs which you can pick and start making more money because they pay higher commission than other market players.'
   puts '-----------------------------------'
-  puts 'Please enter any number between 1 to 30 to know more about the affiliate programs.'
+  puts 'To know more about the affiliate programs, you can type any number from 1-30'
+end
+
+def get_user_input
+  scrape = Scrapeit.new
+  input = ''
+  loop do
+    puts 'Please enter any number between 1 and 30.'
+    input = gets.chomp.to_i
+    break if scrape.check_input(input)
+  end
 end
 
 about
+get_user_input
