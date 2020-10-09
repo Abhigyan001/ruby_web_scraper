@@ -1,10 +1,8 @@
 # ruby_web_scraper
 
-> This program's purpose is to scan a webpage and take relevant data from it that could benfit the user. This project provides useful meditation tips to further enhance your meditation skill.
+> This program's purpose is to scan a webpage and take relevant data from it. This project provides useful meditation tips to further enhance someone's meditation skill.
 
-![screenshot](./image/ss1.PNG)
-
-In this project, you will find 10 best tips for meditation beginners.
+In this project, user will find 10 best tips for meditation beginners.
 
 ## Built With
 
@@ -20,6 +18,10 @@ In this project, you will find 10 best tips for meditation beginners.
 - If the input provided by the user is not between 1 to 10, then user is again asked for the input.
 - If the input provided by the user is between 1 to 10, then the meditation tip and details are displayed.
 
+### How_to_use
+
+![video](./asset/ss.gif)
+
 ### Prerequisites
 
 To get this project up and running locally, you should have Ruby installed.
@@ -28,19 +30,27 @@ To get this project up and running locally, you should have Ruby installed.
 
 Step 1: Clone the repository
 
+```
 'git clone https://github.com/Abhigyan001/ruby_web_scraper'
+```
 
 Step 2: Move into the project directory
 
+```
 'cd ruby_web_scraper'
+```
 
 Step 3: Install necessary dependencies
 
+```
 'bundle install'
+```
 
 Step 4: Run the app
 
+```
 'bin/webscraper.rb'
+```
 
 ### Testing
 

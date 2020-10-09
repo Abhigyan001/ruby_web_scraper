@@ -17,7 +17,7 @@ def take_user_input
   scrape = Meditation.new
   input = ''
   loop do
-    puts 'Please enter any number between 1 and 10.'
+    puts 'Please enter any number between 1 and 10 to see meditation tips.'
     input = gets.chomp.to_i
     break if scrape.check_input(input)
   end
