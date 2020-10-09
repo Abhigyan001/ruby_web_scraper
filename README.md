@@ -16,8 +16,8 @@ In this project, you will find 10 best tips for meditation beginners.
 ## App work flow
 
 - The app has a welcome screen, which has an introduction to meditation.
-- User is asked to enter any number between 1 to 10 for medition tips.
-- If the input provided by the user is not between 1 to 10, then user is again asked for the input.
+- User is asked to enter any number between 1 to 10 for meditation tips.
+- If the input provided by the user is not between 1 to 10, then the user is again asked for the input.
 - If the input provided by the user is between 1 to 10, then the meditation tip and details are displayed.
 
 ### Prerequisites
