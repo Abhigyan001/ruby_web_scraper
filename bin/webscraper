@@ -3,24 +3,53 @@ require 'open-uri'
 require_relative '../lib/methods.rb'
 
 def about
-  puts 'This app will provide details about the top 30 Affiliate programs.'
+  puts 'Welcome! This app will provide tips to start a meditation practice.'
   puts '------------------------------'
-  puts 'Affiliate marketing is a great business model. When someone starts his/her affiliate marketing career, all they want to know first is affiliate marketing programs where they can pick the products and promote. Here, you are going to see some of the best affiliate programs which you can pick and start making more money because they pay higher commission than other market players.'
+  puts 'As yogis have known for centuries, and scientists have more recently confirmed, the benefits of meditation are profound. Studies have shown that meditation can help you lose weight, improve communication and relationships, reduce anxiety and depression, overcome addiction, sharpen your thinking, and even gain more control over your emotions.'
+  puts '------------------------------'
+  puts 'When you meditate, you access deeper brainwave states, helping to clear distracting thoughts, reduce stress, and boost brainpower while cultivating a spiritual connection and reaching deeper states of awareness and wholeness.'
   puts '-----------------------------------'
-  puts 'To know more about the affiliate programs, you can type any number from 1-30'
+  puts 'To know more about the meditation practice tips, you can type any number from 1-10'
 end
 
 def get_user_input
-  scrape = Scrapeit.new
+  scrape = Meditation.new
   input = ''
   loop do
-    puts 'Please enter any number between 1 and 30.'
+    puts 'Please enter any number between 1 and 10.'
     input = gets.chomp.to_i
     break if scrape.check_input(input)
   end
-  aff_prog = scrape.web_scraper(input)
-  puts aff_prog
-  puts scrape.aff_detail(input)
+  meditate = scrape.web_scraper(input)
+  puts 'Fetching your tip.........'
+  puts '------------------------------'
+  puts meditate
+  puts '------------------------------'
+  puts 'Please wait for more details regarding the tip.........'
+  puts '------------------------------'
+  puts scrape.tip_detail(input)
+  puts '------------------------------'
+  next_turn
+end
+
+def next_turn
+  puts '------------------------------'
+  puts 'Would you like to see more Meditation tips?'
+  puts 'Yes or No'
+  choice = ''
+  until choice.match?(/^yes$|^no$/)
+    puts 'Please type YES or NO' if choice != ''
+    choice = gets.chomp.downcase
+  end
+
+  if choice == 'yes'   
+    puts '------------------------------'
+    get_user_input
+  else
+    puts '-------------------------------'
+    puts 'Goodbye! Thanks for using the app.'
+    puts '-------------------------------'
+  end
 end
 
 
