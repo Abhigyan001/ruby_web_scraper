@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# rubocop:disable Metrics/LineLength
 require 'open-uri'
 require_relative '../lib/methods.rb'
 
@@ -12,7 +13,7 @@ def about
   puts 'To know more about the meditation practice tips, you can type any number from 1-10'
 end
 
-def get_user_input
+def take_user_input
   scrape = Meditation.new
   input = ''
   loop do
@@ -28,14 +29,13 @@ def get_user_input
   puts '------------------------------'
   puts 'Please wait for more details regarding the tip:'
   sleep 2
-  puts '------------------------------'  
+  puts '------------------------------'
   puts scrape.tip_detail(input)
   puts '------------------------------'
   next_turn
 end
 
 def next_turn
-  puts '------------------------------'
   puts 'Would you like to see more Meditation tips?'
   puts 'Yes or No'
   choice = ''
@@ -44,9 +44,9 @@ def next_turn
     choice = gets.chomp.downcase
   end
 
-  if choice == 'yes'   
+  if choice == 'yes'
     puts '------------------------------'
-    get_user_input
+    take_user_input
   else
     puts '-------------------------------'
     puts 'Goodbye! Thanks for using the app.'
@@ -55,6 +55,5 @@ def next_turn
 end
 
 about
-get_user_input
-
-
+take_user_input
+# rubocop:enable Metrics/LineLength
