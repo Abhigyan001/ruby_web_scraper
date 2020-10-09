@@ -16,6 +16,12 @@ class Scrapeit
     url = 'https://www.bloggingcage.com/highest-paying-affiliate-programs/'
     parsed = Nokogiri::HTML(URI.open(url))
     article_title = parsed.css('h3').to_a
-    article_title[val-1].text
+    article_title[val-1].text    
+  end
+
+  def aff_detail(val1)
+    url = 'https://www.bloggingcage.com/highest-paying-affiliate-programs/'
+    parsed = Nokogiri::HTML(URI.open(url))
+    parsed.search('p')[val1 + 10].text
   end
 end
