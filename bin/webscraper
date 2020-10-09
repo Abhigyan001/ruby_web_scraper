@@ -21,12 +21,14 @@ def get_user_input
     break if scrape.check_input(input)
   end
   meditate = scrape.web_scraper(input)
-  puts 'Fetching your tip.........'
+  puts 'Fetching your tip:'
+  sleep 2
   puts '------------------------------'
   puts meditate
   puts '------------------------------'
-  puts 'Please wait for more details regarding the tip.........'
-  puts '------------------------------'
+  puts 'Please wait for more details regarding the tip:'
+  sleep 2
+  puts '------------------------------'  
   puts scrape.tip_detail(input)
   puts '------------------------------'
   next_turn
@@ -52,7 +54,7 @@ def next_turn
   end
 end
 
-
-
 about
 get_user_input
+
+

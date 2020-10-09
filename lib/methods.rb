@@ -14,7 +14,7 @@ class Meditation
 
   def web_scraper(val)
     url = 'https://www.gaiam.com/blogs/discover/10-tips-to-start-a-meditation-practice'
-    parsed = Nokogiri::HTML(URI.open(url))
+    parsed = Nokogiri::HTML(URI.open(url))    
     article_title = parsed.css('h3').to_a
     article_title[val-1].text    
   end
